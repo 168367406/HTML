@@ -18,7 +18,8 @@
 
 //判断当前页面是否在iframe中
 if (top == this) {
-    var gohome = '<div class="gohome"><a class="animated bounceInUp" href="index.html?v=4.0" title="返回首页"><i class="fa fa-home"></i></a></div>';
+    alert("sadfaf");
+    var gohome = '<div class="gohome"><a class="animated bounceInUp" href="index.html" title="返回首页"><i class="fa fa-home"></i></a></div>';
     $('body').append(gohome);
 }
 

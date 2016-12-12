@@ -164,34 +164,33 @@
 
 
     <!-- iCheck -->
-    <script src="js/plugins/iCheck/icheck.min.js"></script>
+    <script src="plugins/iCheck/icheck.min.js"></script>
 
     <!-- SUMMERNOTE -->
-    <script src="js/plugins/summernote/summernote.min.js"></script>
-    <script src="js/plugins/summernote/summernote-zh-CN.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('.i-checks').iCheck({
-                checkboxClass: 'icheckbox_square-green',
-                radioClass: 'iradio_square-green',
-            });
+
+    <!--<script>-->
+        <!--$(document).ready(function () {-->
+            <!--$('.i-checks').iCheck({-->
+                <!--checkboxClass: 'icheckbox_square-green',-->
+                <!--radioClass: 'iradio_square-green',-->
+            <!--});-->
 
 
-            $('.summernote').summernote({
-                lang: 'zh-CN'
-            });
+            <!--$('.summernote').summernote({-->
+                <!--lang: 'zh-CN'-->
+            <!--});-->
 
-        });
-        var edit = function () {
-            $('.click2edit').summernote({
-                focus: true
-            });
-        };
-        var save = function () {
-            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
-            $('.click2edit').destroy();
-        };
-    </script>
+        <!--});-->
+        <!--var edit = function () {-->
+            <!--$('.click2edit').summernote({-->
+                <!--focus: true-->
+            <!--});-->
+        <!--};-->
+        <!--var save = function () {-->
+            <!--var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).-->
+            <!--$('.click2edit').destroy();-->
+        <!--};-->
+    <!--</script>-->
 
     
     

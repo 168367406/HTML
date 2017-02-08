@@ -115,6 +115,8 @@
             }
             var dataUrl = $(this).attr('href');
             var menuName = $.trim($(this).text());
+            alert(menuName);
+            alert(dataUrl);
             var flag = true;
             if (dataUrl == undefined || $.trim(dataUrl).length == 0) {
                 return false;
@@ -376,3 +378,6 @@
         $.learuntab.init();
     });
 })(jQuery);
+$(function () {
+    alert("sss")
+})

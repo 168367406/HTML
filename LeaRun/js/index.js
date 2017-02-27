@@ -1,5 +1,6 @@
 ﻿(function ($) {
     $.learuntab = {
+        // 全屏
         requestFullScreen: function () {
             var de = document.documentElement;
             if (de.requestFullscreen) {
@@ -10,6 +11,7 @@
                 de.webkitRequestFullScreen();
             }
         },
+        // 退出全屏
         exitFullscreen: function () {
             var de = document;
             if (de.exitFullscreen) {
@@ -20,6 +22,7 @@
                 de.webkitCancelFullScreen();
             }
         },
+        // 刷新tab
         refreshTab: function () {
             var currentId = $('.page-tabs-content').find('.active').attr('data-id');
             var target = $('.LRADMS_iframe[data-id="' + currentId + '"]');
@@ -29,6 +32,7 @@
                 //$.loading(false);
             });
         },
+        // 激活tab
         activeTab: function () {
             var currentId = $(this).data('id');
             if (!$(this).hasClass('active')) {
@@ -42,6 +46,7 @@
                 $.learuntab.scrollToTab(this);
             }
         },
+        // 关闭其他的tab
         closeOtherTabs: function () {
             $('.page-tabs-content').children("[data-id]").find('.fa-remove').parents('a').not(".active").each(function () {
                 $('.LRADMS_iframe[data-id="' + $(this).data('id') + '"]').remove();
@@ -49,6 +54,7 @@
             });
             $('.page-tabs-content').css("margin-left", "0");
         },
+        // 关闭tab
         closeTab: function () {
             var closeTabId = $(this).parents('.menuTab').data('id');
             var currentWidth = $(this).parents('.menuTab').width();
@@ -107,6 +113,7 @@
             }
             return false;
         },
+        // 打开tab
         addTab: function () {
             $(".navbar-custom-menu>ul>li.open").removeClass("open");
             var dataId = $(this).attr('data-id');
@@ -115,8 +122,8 @@
             }
             var dataUrl = $(this).attr('href');
             var menuName = $.trim($(this).text());
-            alert(menuName);
-            alert(dataUrl);
+            // alert(menuName);
+            // alert(dataUrl);
             var flag = true;
             if (dataUrl == undefined || $.trim(dataUrl).length == 0) {
                 return false;
@@ -152,6 +159,7 @@
             }
             return false;
         },
+        // 向右滑动tab栏
         scrollTabRight: function () {
             var marginLeftVal = Math.abs(parseInt($('.page-tabs-content').css('margin-left')));
             var tabOuterWidth = $.learuntab.calSumWidth($(".content-tabs").children().not(".menuTabs"));
@@ -179,6 +187,7 @@
                 }
             }
         },
+        // 向左滑动tab栏
         scrollTabLeft: function () {
             var marginLeftVal = Math.abs(parseInt($('.page-tabs-content').css('margin-left')));
             var tabOuterWidth = $.learuntab.calSumWidth($(".content-tabs").children().not(".menuTabs"));
@@ -206,6 +215,7 @@
                 marginLeft: 0 - scrollVal + 'px'
             }, "fast");
         },
+        // 滑动tab栏显示激活的tab页
         scrollToTab: function (element) {
             var marginLeftVal = $.learuntab.calSumWidth($(element).prevAll()), marginRightVal = $.learuntab.calSumWidth($(element).nextAll());
             var tabOuterWidth = $.learuntab.calSumWidth($(".content-tabs").children().not(".menuTabs"));
@@ -229,6 +239,7 @@
                 marginLeft: 0 - scrollVal + 'px'
             }, "fast");
         },
+        //计算宽度
         calSumWidth: function (element) {
             var width = 0;
             $(element).each(function () {
@@ -236,16 +247,20 @@
             });
             return width;
         },
+        //初始化
         init: function () {
             $('.menuItem').on('click', $.learuntab.addTab);
             $('.menuTabs').on('click', '.menuTab i', $.learuntab.closeTab);
             $('.menuTabs').on('click', '.menuTab', $.learuntab.activeTab);
             $('.tabLeft').on('click', $.learuntab.scrollTabLeft);
             $('.tabRight').on('click', $.learuntab.scrollTabRight);
+            //刷新当前
             $('.tabReload').on('click', $.learuntab.refreshTab);
+            //关闭当前tab
             $('.tabCloseCurrent').on('click', function () {
                 $('.page-tabs-content').find('.active i').trigger("click");
             });
+            //关闭所有
             $('.tabCloseAll').on('click', function () {
                 $('.page-tabs-content').children("[data-id]").find('.fa-remove').each(function () {
                     $('.LRADMS_iframe[data-id="' + $(this).data('id') + '"]').remove();
@@ -257,7 +272,9 @@
                 });
                 $('.page-tabs-content').css("margin-left", "0");
             });
+            //关闭其他
             $('.tabCloseOther').on('click', $.learuntab.closeOtherTabs);
+            //全屏
             $('.fullscreen').on('click', function () {
                 if (!$(this).attr('fullscreen')) {
                     $(this).attr('fullscreen', 'true');
@@ -378,6 +395,3 @@
         $.learuntab.init();
     });
 })(jQuery);
-$(function () {
-    alert("sss")
-})

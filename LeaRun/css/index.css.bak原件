@@ -560,7 +560,7 @@ a:hover, a:active, a:focus {
     width: auto
 }
 
-@media (min-width: 768px) {
+@media (min-width: 168px) {
     .sidebar-mini.sidebar-collapse .content-wrapper, .sidebar-mini.sidebar-collapse .right-side, .sidebar-mini.sidebar-collapse .main-footer {
         margin-left: 50px !important;
         z-index: 840
@@ -622,7 +622,7 @@ a:hover, a:active, a:focus {
     }
 
     .sidebar-mini.sidebar-collapse .main-header .logo {
-        width: 50px
+        /*width: 50px*/
         /*width: 0px;*/
     }
 
@@ -638,8 +638,8 @@ a:hover, a:active, a:focus {
     }
 
     .sidebar-mini.sidebar-collapse .main-header .navbar {
-        margin-left: 50px;
-        /*margin-left: 0px*/
+        /*margin-left: 50px*/
+        margin-left: 0px
     }
 }
 

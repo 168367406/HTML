@@ -1,0 +1,32 @@
+/*
+ * lazy.tree
+ * PROJECT_NAME: HTML
+ * PACKAGE_NAME: 
+ * Created by Lazy on 2017/4/8 18:03
+ * Version: 0.1
+ * Info: @TODO:...
+ */
+.lazy-tree{
+    list-style: none;
+}
+.lazy-tree a{
+    color: black;
+    text-decoration:none;
+}
+.lazy-tree a:hover{
+    color: #000f94;
+}
+/*.lazy-tree a:link{*/
+    /*color: #000f94;*/
+
+/*}*/
+.lazy-tree ul li{
+    list-style: none;
+}
+.lazy-tree li i{
+    padding-left: 6px;
+    padding-right: 4px;
+}
+/*.lazy-tree li a i{*/
+    /*padding-left: 10px;*/
+/*}*/

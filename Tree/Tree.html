@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!--
+       Tree
+       PROJECT_NAME: HTML
+       PACKAGE_NAME: 
+       Created by Lazy on 2017/4/8 15:55
+       Version: 0.1
+       Info: @TODO:...
+    -->
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lazy.tree.css">
+    <script type="text/javascript" src="js/jQuery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/lazy.tree.core.js"></script>
+</head>
+<body>
+<div>
+
+    <ul id="demo1" class="lazy-tree">
+        <li>
+            <i class="fa fa-chevron-down"></i><a href="javascript:;"><i class="fa fa-folder-open"></i>我的邮箱</a>
+            <ul class="">
+                <li>
+                    <i class="fa fa-chevron-down"></i><a href="javascript:;"><i class="fa fa-folder-open"></i>QQ邮箱</a>
+                    <ul class="">
+                        <li>
+                            <i class="fa fa-chevron-down"></i><a href="javascript:;"><i class="fa fa-folder-open"></i>收件箱</a>
+                            <ul class="">
+                                <li>
+                                    <a href="javascript:;"><i class="fa fa-file-o"></i>所有未读</a>
+                                    <i>
+                                        <a href=""><i class="fa fa-plus"></i></a>
+                                        <a href=""><i class="fa fa-edit"></i></a>
+                                        <a href=""><i class="fa fa-remove"></i></a>
+                                        <a href=""><i class="fa fa-link"></i></a>
+                                    </i>
+                                </li>
+                                <li><a href="javascript:;"><i class="fa fa-file-o"></i>置顶邮件</a></li>
+                                <li><a href="javascript:;"><i class="fa fa-file-o"></i>标签邮件</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:;"><i class="fa fa-file-o"></i>已发出的邮件</a></li>
+                        <li><a href="javascript:;"><i class="fa fa-file-o"></i>垃圾邮件</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-down"></i><a href="javascript:;"><i class="fa fa-folder-open"></i>阿里云邮</a>
+                    <ul class="">
+                        <li><a href="javascript:;"><i class="fa fa-file-o"></i>收件箱</a></li>
+                        <li><a href="javascript:;"><i class="fa fa-file-o"></i>已发出的邮件</a></li>
+                        <li><a href="javascript:;"><i class="fa fa-file-o"></i>垃圾邮件</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<div>
+    <div id="demo2">sssssss</div>
+</div>
+<script>
+    $("#demo1").lazyTree.init();
+    var txt=$("#demo2").hilight.format("aaa");
+    $("#demo2").html(txt);
+</script>
+</body>
+</html>

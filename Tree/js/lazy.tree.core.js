@@ -39,7 +39,6 @@
     };
 
     $.fn.lazyTree = function (method) {
-
         // 方法调用
         if (methods[method]) {
             return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
@@ -48,7 +47,6 @@
         } else {
             $.error('Method ' + method + ' does not exist on jQuery.lazyTree');
         }
-
     };
     $.fn.lazyTree.test=function (obj) {
         var o=obj;

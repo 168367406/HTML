@@ -55,7 +55,7 @@
     </div>
 </div>
 <div>
-    <div id="demo2" class="lazy-tree">444</div>
+    <div id="demo2" class="lazy-tree"></div>
 </div>
 <script>
     var json = [
@@ -68,10 +68,11 @@
         {name: "7", id: "7", pId: "1", ico: "fa fa-desktop", url: "/test"}
     ];
     //    alert($.fn.lazyTree.test());
-    $("#demo2").lazyTree(json);
+//    $("#demo2").lazyTree(json);
     //    $("#demo2").lazyTree.lazyinit();
     //    $("#demo1").css({"color":"red","font-size":"9px"});
-    alert($.fn.lazyTree.test($("#demo2")))
+    $.fn.lazyTree.init($("#demo2"));
+//    $.fn.lazyTree('show');
 </script>
 </body>
 </html>

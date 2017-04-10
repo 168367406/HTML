@@ -7,11 +7,26 @@
  * Info: Tree核心js工具类
  */
 (function ($, window, document, undefined) {
-    var setting = {}, obj = null;
+    "use strict";
+    var setting = {}, obj = null,
+        _consts = {},
+        tools = {},
+        view = {},
+        event = {},
+        data = {};
 
-    var methods = {
+
+    var methods = {};
+    $.fn.lazyTree = {
+        consts: _consts,
+        _z: {
+            tools: tools,
+            view: view,
+            event: event,
+            data: data
+        },
         init: function (options, data) {
-            if (data==null)
+            if (data == null)
                 console.log(data);
             var _html = "";
             _html += "<ul>";
@@ -21,14 +36,10 @@
 
             _html += "</li>";
             _html += "</ul>";
-            alert("aa");
             return this.append(_html);
-            function test() {
-                alert("11   ");
-            }
         },
         show: function () {
-            // is
+            alert("test");
         },
         hide: function () {
             // good
@@ -38,18 +49,18 @@
         }
     };
 
-    $.fn.lazyTree = function (method) {
-        // 方法调用
-        if (methods[method]) {
-            return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
-        } else if (typeof method === 'object' || !method) {
-            return methods.init.apply(this, arguments);
-        } else {
-            $.error('Method ' + method + ' does not exist on jQuery.lazyTree');
-        }
-    };
-    $.fn.lazyTree.test=function (obj) {
-        var o=obj;
-        return obj.html();
-    }
+    // $.fn.lazyTree = function (method) {
+    //     // 方法调用
+    //     if (methods[method]) {
+    //         return methods[method].apply(this, Array.prototype.slice.call(arguments, 1));
+    //     } else if (typeof method === 'object' || !method) {
+    //         return methods.init.apply(this, arguments);
+    //     } else {
+    //         $.error('Method ' + method + ' does not exist on jQuery.lazyTree');
+    //     }
+    // };
+    // $.fn.lazyTree.init = function (obj) {
+    //     obj.lazyTree();
+    // };
+
 })(jQuery, window, document);
